@@ -1,0 +1,40 @@
+#include <stdio.h>
+int reverse(int num){
+    int temp,reverse=0;
+    while(num/10!=0){
+        temp=num%10;
+		reverse = reverse*10+temp;
+		num=num/10;
+    }
+    reverse = reverse*10 +num;
+    return reverse;
+}
+int main()
+{
+    int K,t,A[t];
+
+    //printf("Enter no of times to print nearest palindrome no:");
+    scanf("%d",&t);
+    for(int i=0;i<t;i++){
+    //printf("Enter any num:");
+    scanf("%d",&K);
+    if(K==reverse(K)){
+    //t=reverse(K);
+    ///printf("%d is palindrome no.\n",reverse(K));
+    A[i]=K;
+    }
+    else{
+        while(K!=reverse(K))
+        K++;
+      
+        ///printf("The nearest palindrome number:%d\n",K);
+    }
+      A[i]=K;
+    }
+    for(int i=0;i<t;i++)
+    printf("%d\n",A[i]);
+    
+    
+
+    return 0;
+}
